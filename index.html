@@ -210,7 +210,7 @@ function selOpt(i,btns){
     const qq=document.getElementById('q-quote');
     qq.innerHTML='<span>'+q.qt.tx+'</span><div class="attribution">'+q.qt.src+'</div>';
     setTimeout(()=>qq.classList.add('show'),200);
-    setTimeout(()=>{wN=false;recAns(i);},2600);
+    const readMs=Math.max(4000,Math.ceil(q.qt.tx.length/200*60*1000));setTimeout(()=>{wN=false;recAns(i);},readMs);
   }else recAns(i);
 }
 function recAns(i){
